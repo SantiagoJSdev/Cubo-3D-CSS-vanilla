@@ -5,6 +5,8 @@ body{
 
 :root {
     --size: 200px;
+    --width: 150px;
+    --height: 250px;
 }
 .container-principal{
     display: flex;
@@ -12,13 +14,13 @@ body{
     margin-top: 6em;
 }
 .container {
-    width: var(--size);
-    height: var(--size);
+    width: var(--width);
+    height: var(--height);
     /* background: grey; */
     position: relative;
-    perspective: 5000px;
+    /* perspective: 5000px; */
     transform-style: preserve-3d;
-    transform: rotateX(147deg) rotateY(321deg);
+    transform: rotateX(157deg) rotateY(255deg);
 }
 .face {
     width: 100%;
@@ -26,32 +28,36 @@ body{
     /* background: red; */
     position: absolute;
 }
-.side-1 {
-    background: rgba(180, 172, 172, 0.4);;
-    z-index: 5;
-    transform: translate3d(0, 0, calc(-1 * var(--size))); 
+.right {
+    background: rgba(180, 172, 172, 0.8);;
+
+    transform: translate3d(0, 0, calc(-1 * var(--width))); 
     /* //hice un cal xq mi size queria que fuera negativo */
 }
-.side-2 {
-    background: rgba(255, 172, 172, 0.4);;
+.front {
+    background: rgba(255, 172, 172, 0.8);;
     transform-origin: 0% 0%;
     transform: rotate3d(0, 1, 0, 90deg);
 }
-.side-3 {
-    background: rgba(180, 255, 172, 0.4);;
+.back {
+    background: rgba(180, 255, 172, 0.8);;
     transform-origin: 100% 100%;
     transform: rotate3d(0, 1, 0, -90deg);
 }
-.side-4 {
-    background: rgba(180, 172, 255, 0.4);;
-    transform-origin: 0 0;
+.bottom {
+    background: rgba(68, 212, 11, 0.8);;
+    transform-origin: 0% 0%;
     transform: rotate3d(1, 0, 0, -90deg);
+    height: var(--width);
 }
-.side-5 {
-background: rgba(180, 172, 172, 0.4);
+.top{
+--offset: calc(-1 * calc(var(--height) - var(--width)));
+background: rgba(69, 230, 29, 0.8);
 transform-origin: 0 100%;
-transform: rotate3d(1, 0, 0, 90deg);
+/* transform: rotate3d(1, 0, 0, 90deg);  */
+transform: rotate3d(1, 0, 0, 90deg) translateZ(var(--offset));
+height: var(--width);
 }
-.side-6 {
-    background: rgba(180, 172, 172, 0.4);;
+.left{
+    background: rgba(131, 26, 26, 0.9);
 }
