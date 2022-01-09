@@ -1,0 +1,57 @@
+body{
+    background: blueviolet;
+    margin: 0;
+}
+
+:root {
+    --size: 200px;
+}
+.container-principal{
+    display: flex;
+    justify-content: center;
+    margin-top: 6em;
+}
+.container {
+    width: var(--size);
+    height: var(--size);
+    /* background: grey; */
+    position: relative;
+    perspective: 5000px;
+    transform-style: preserve-3d;
+    transform: rotateX(147deg) rotateY(321deg);
+}
+.face {
+    width: 100%;
+    height: 100%;
+    /* background: red; */
+    position: absolute;
+}
+.side-1 {
+    background: rgba(180, 172, 172, 0.4);;
+    z-index: 5;
+    transform: translate3d(0, 0, calc(-1 * var(--size))); 
+    /* //hice un cal xq mi size queria que fuera negativo */
+}
+.side-2 {
+    background: rgba(255, 172, 172, 0.4);;
+    transform-origin: 0% 0%;
+    transform: rotate3d(0, 1, 0, 90deg);
+}
+.side-3 {
+    background: rgba(180, 255, 172, 0.4);;
+    transform-origin: 100% 100%;
+    transform: rotate3d(0, 1, 0, -90deg);
+}
+.side-4 {
+    background: rgba(180, 172, 255, 0.4);;
+    transform-origin: 0 0;
+    transform: rotate3d(1, 0, 0, -90deg);
+}
+.side-5 {
+background: rgba(180, 172, 172, 0.4);
+transform-origin: 0 100%;
+transform: rotate3d(1, 0, 0, 90deg);
+}
+.side-6 {
+    background: rgba(180, 172, 172, 0.4);;
+}
