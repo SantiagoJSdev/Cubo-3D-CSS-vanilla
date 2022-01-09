@@ -14,13 +14,16 @@ body{
     margin-top: 6em;
 }
 .container {
+    --origin-z: calc(-1 * calc(var(--width) / 2));
     width: var(--width);
     height: var(--height);
     /* background: grey; */
     position: relative;
     /* perspective: 5000px; */
     transform-style: preserve-3d;
-    transform: rotateX(157deg) rotateY(255deg);
+    /* transform: rotateX(157deg) rotateY(255deg); */
+    transform-origin: 50% 100% var(--origin-z);
+    animation: rotating 5s linear infinite;
 }
 .face {
     width: 100%;
@@ -60,4 +63,10 @@ height: var(--width);
 }
 .left{
     background: rgba(131, 26, 26, 0.9);
+}
+
+@keyframes rotating {
+    0% {    transform: rotateX(157deg) rotateY(0deg); }
+    100% {  transform: rotateX(157deg) rotateY(360deg);
+    }
 }
